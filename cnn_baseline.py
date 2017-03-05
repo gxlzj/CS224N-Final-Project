@@ -12,7 +12,7 @@ from process_data import WordVecs
 
 logger = logging.getLogger("social_attention.cnn.baseline")
 
-def train_conv_net(datasets,                # word indices of train/dev/test tweets
+def train_conv_net(datasets,                # a tuple of 5 identical format dataset
                    U,                       # pre-trained word embeddings
                    text_dim=100,            # dim of sentence vector
                    batch_size=20,           # mini batch size
@@ -21,13 +21,18 @@ def train_conv_net(datasets,                # word indices of train/dev/test twe
     train and evaluate convolutional neural network model for sentiment clasisification with SemEval datasets
     """
     # prepare datasets
+    # each set is a numpy ndarray, samples x (features + 1)
     train_set, dev_set, test13_set, test14_set, test15_set = datasets
+    #divide x and y
     train_set_x, dev_set_x, test13_set_x, test14_set_x, test15_set_x = train_set[:,:-1], dev_set[:,:-1], test13_set[:,:-1], test14_set[:,:-1], test15_set[:,:-1]
     train_set_y, dev_set_y, test13_set_y, test14_set_y, test15_set_y = train_set[:,-1], dev_set[:,-1], test13_set[:,-1], test14_set[:,-1], test15_set[:,-1]
+    # transform label 1,2,3 to [1 0 0], [0 1 0], [0 0 1]
     train_set_y = np_utils.to_categorical(train_set_y, 3) # negative, positive, neutral
 
     # build model with keras
+    #extract number of features for each data samples
     n_tok = len(train_set[0])-1  # num of tokens in a tweet
+    #U is a ndarray, size 30229 x 600 (word vec dimension)
     vocab_size, emb_dim = U.shape
     sequence = Input(shape=(n_tok,), dtype='int32')
     emb_layer = Embedding(vocab_size, emb_dim, weights=[U], trainable=False, input_length=n_tok)(sequence) 
