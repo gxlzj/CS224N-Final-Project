@@ -97,7 +97,9 @@ def avg_fscore(y_pred, y_gold):
     pos_f1, neg_f1 = 2*pos_prec*pos_reca / (pos_prec+pos_reca), 2*neg_prec*neg_reca / (neg_prec+neg_reca)
     return (pos_f1+neg_f1)/2.0
 
-
+"""
+Transform a list of words into their indices in the embedding matrix
+"""
 def get_idx_from_sent(words, word_idx_map, max_l=50):
     """
     Transforms sentence into a list of indices. Pad with zeroes.
@@ -110,6 +112,13 @@ def get_idx_from_sent(words, word_idx_map, max_l=50):
         x.append(0)
     return x
 
+
+"""
+Return several matrices (np.array), each representing a dataset (corpus)
+Each row of matrix represent a twitter sample, with each number being the idx of the word in the word vector-representation
+tweets with less words than the maximum length are filled with zeros (embedded with 0 in word vector-representation)
+the last number of each row represents the sentiment level of this tweet
+"""
 def make_idx_data(revs, word_idx_map, max_l=50):
     """
     Transforms sentences into a 2-d matrix.

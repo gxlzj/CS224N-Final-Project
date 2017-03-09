@@ -6,7 +6,14 @@ import sys, re, os, logging
 import pandas as pd
 
 logger = logging.getLogger("social_attention.procdata")
-
+"""
+read every file with name in fnames;
+Outputs:
+    revs: a list of dictionaries {'y':label, 'uid':user_id, 'words':words, 'num_words':len(words), 'split':corpus_number}
+    vocab: default dictionary that count the frequency of each word in all corpuses
+    user_vocab: a set containing all user ids
+    max_l: maximum twitter length
+"""
 def build_data(fnames):
     """
     Loads and process data.
@@ -37,6 +44,11 @@ def build_data(fnames):
     logger.info("vocab size: %d, max tweet length: %d" %(len(vocab), max_l))
     return revs, vocab, user_vocab, max_l
    
+
+"""
+read the file of name fname, where each line of the file is a twitter data sample: twitter id, usr id, label, twitter content
+if split==False, it will return a list of a SINGLE member, where the member is a list of tuples: [tid, uid, label, words]
+"""
 def get_corpus(fname, split=False):
     label2idx = {"positive":1, "negative":0, "neutral":2}
     labeled_corpus = [[],[],[]]
@@ -116,7 +128,7 @@ class WordVecs(object):
         pos = 0
         with open(fname, "rb") as f:
             header = f.readline()
-            vocab_size, layer1_size = map(int, header.split())
+            vocab_size, layer1_size = map(int, header.split())  # transform each member in the list header.split() into int
             for line in f:
                 parts = line.strip().split()
                 word = parts[0]
