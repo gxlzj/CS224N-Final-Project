@@ -18,10 +18,10 @@ def train_conv_net(datasets,                # a tuple of 5 identical format data
                    batch_size=20,           # mini batch size
                    n_epochs=15):
     """
-    train and evaluate convolutional neural network model for sentiment clasisification with SemEval datasets
+    train and evaluate convolution neural network model for sentiment classification with SemEval datasets
     """
     # prepare datasets
-    # each set is a numpy ndarray, samples x (features + 1)
+    # each set is a numpy ndarray, of size #samples x (features + 1)
     train_set, dev_set, test13_set, test14_set, test15_set = datasets
     #divide x and y
     train_set_x, dev_set_x, test13_set_x, test14_set_x, test15_set_x = train_set[:,:-1], dev_set[:,:-1], test13_set[:,:-1], test14_set[:,:-1], test15_set[:,:-1]
@@ -159,7 +159,7 @@ if __name__=="__main__":
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
     logger.info('begin logging')
 
-    fname = sys.argv[1]
+    fname = "data/semeval.pkl"
 
     logger.info("loading data...")
     x = cPickle.load(open(fname,"rb"))
