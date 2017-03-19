@@ -1,38 +1,12 @@
 import numpy as np
 import tensorflow as tf
-#
-# # Model parameters
-# W = tf.Variable([.3], tf.float32)
-# b = tf.Variable([-.3], tf.float32)
-# # Model input and output
-# x = tf.placeholder(tf.float32)
-# linear_model = W * x + b
-# y = tf.placeholder(tf.float32)
-# # loss
-# loss = tf.reduce_sum(tf.square(linear_model - y)) # sum of the squares
-# # optimizer
-# optimizer = tf.train.GradientDescentOptimizer(0.01)
-# train = optimizer.minimize(loss)
-# # training data
-# x_train = [1,2,3,4]
-# y_train = [0,-1,-2,-3]
-# # training loop
-# init = tf.global_variables_initializer()
-# sess = tf.Session()
-# sess.run(init) # reset values to wrong
-# for i in range(1000):
-#   _loss1,_train, _loss = sess.run([loss,train,loss], {x:x_train, y:y_train})
-#   if i%100 == 0:
-#   	print _loss1,_train,_loss
-#
-# # evaluate training accuracy
-# curr_W, curr_b, curr_loss  = sess.run([W, b, loss], {x:x_train, y:y_train})
-# print("W: %s b: %s loss: %s"%(curr_W, curr_b, curr_loss))
+#parameters
 text_dim = 100
 word_emb_size = 600
 sentence_length = 40
 batch_size = 10
 
+#input data
 data_x = np.random.random(size=(batch_size,sentence_length,word_emb_size))
 print data_x.shape
 
@@ -49,7 +23,6 @@ conv_layer = tf.nn.conv1d(word_emb, filters=W_conv, stride=1, padding = 'VALID')
 dropped_conv_layer = tf.nn.dropout(conv_layer,keep_prob)
 activated_conv_layer = tf.nn.tanh(dropped_conv_layer)
 pooled_layer = tf.reduce_max(activated_conv_layer, axis=1)
-
 W_softmax = tf.get_variable("W_softmax",
                             shape=[text_dim,3],
                             initializer=tf.contrib.layers.xavier_initializer())
@@ -66,7 +39,7 @@ objective = tf.reduce_mean(loss + l2_penalty * regularizers)
 #predictions
 pred_y = tf.nn.softmax(logits)
 
-running
+#running
 init = tf.global_variables_initializer()
 sess = tf.Session()
 sess.run(init)
@@ -80,8 +53,6 @@ a1,a2 = sess.run([logits,pred_y], {word_emb:data_x,keep_prob:0.5})
 # print '----'
 # print a4
 # print '----'
-print a1
-print a2
 print a1.shape
 print a2.shape
 # print a3.shape
