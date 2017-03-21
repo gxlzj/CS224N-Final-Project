@@ -1,0 +1,38 @@
+\begin{thebibliography}{4}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \expandafter\ifx\csname doi\endcsname\relax
+  \def\doi#1{doi:\discretionary{}{}{}#1}\fi \else
+  \expandafter\ifx\csname doi\endcsname\relax
+  \def\doi{doi:\discretionary{}{}{}\begingroup \urlstyle{rm}\Url}\fi \fi
+
+\bibitem[{Grover and Leskovec(2016)}]{grover2016node2vec}
+Grover, Aditya, Jure Leskovec. 2016.
+\newblock node2vec: Scalable feature learning for networks.
+\newblock {\it Proceedings of the 22nd ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining\/}. ACM, 855--864.
+
+\bibitem[{Perozzi et~al.(2014)Perozzi, Al-Rfou, and
+  Skiena}]{perozzi2014deepwalk}
+Perozzi, Bryan, Rami Al-Rfou, Steven Skiena. 2014.
+\newblock Deepwalk: Online learning of social representations.
+\newblock {\it Proceedings of the 20th ACM SIGKDD international conference on
+  Knowledge discovery and data mining\/}. ACM, 701--710.
+
+\bibitem[{Tang et~al.(2015)Tang, Qu, Wang, Zhang, Yan, and Mei}]{tang2015line}
+Tang, Jian, Meng Qu, Mingzhe Wang, Ming Zhang, Jun Yan, Qiaozhu Mei. 2015.
+\newblock Line: Large-scale information network embedding.
+\newblock {\it Proceedings of the 24th International Conference on World Wide
+  Web\/}. ACM, 1067--1077.
+
+\bibitem[{Yang and Eisenstein(2017)}]{yang2017attention}
+Yang, Yi, Jacob Eisenstein. 2017.
+\newblock Overcoming language variation in sentiment analysis with social
+  attention.
+\newblock {\it Transactions of the Association for Computational Linguistics
+  (TACL)\/} .
+
+\end{thebibliography}
