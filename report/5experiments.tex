@@ -1,0 +1,26 @@
+%!TEX root = report.tex
+
+
+\section{Experiments}
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c c c c|}
+\hline
+Embedding method & CNN & DeepWalk & LINE & node2vec & random\\
+\hline
+Dev2013  & 68.85 & 67.71 & \textbf{69.51} & 68.58 & 68.50 \\
+\hline
+Test2013  & 69.53 & 67.58 & \textbf{69.67} & 68.58 & 68.49 \\
+Test2014  & \textbf{72.41} & 71.46 & 71.44 & 71.46 & 71.69 \\
+Test2015  & 64.40 & \textbf{64.71} & 64.57 & 64.25 & 63.50 \\
+\hline
+Avg test sets & \textbf{68.78}& 67.92 & 68.56  & 68.10 & 67.89 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Prediction performance on each Dev and Test Sets. }
+\label{Tb:}
+\end{table}%
