@@ -8,8 +8,17 @@ The current state-of-the-art method is convolutional neural networks(CNN)[9] whi
 
 
 \subsection*{Network Node Embeddings}
+The emergence of various network node embedding methods make it possible to represent each node with a meaningful
+vector representation. The aim is to assign vectors such that connected nodes have similar vector while
+socially distant pairs of nodes have different vectors. The idea in achieving this vector assignment originated
+from the skip-gram word2vec method, which aims to maximize the likelihood of occurrence of context words given
+the center of each sentence window. In various node embedding methods, one aims to maximize the likelihood
+of node 1-hop neighborhood based on the center node. With different neighborhood sampling methods and objective function,
+the three current most popular efficient algorithm that easily applies to network of thousands of nodes are the 
+DeepWalk \cite{sdf}, LINE \cite{sdfsd}, and node2vec{dsf}. These three model have proven to obtain good performance
+in many downstream prediction tasks such as multi-label classifications. In this paper, we compare the performance
+of these three methods in solving the language variation problem in sentiment analysis. 
 
-To be added by Hao Yin ....
 
 
 \subsection*{Aiding Classification with Social Network}
@@ -18,4 +27,5 @@ The intuition behind combing social network with classification is that users co
 
 Tan et al.(2011)[5] is the first paper to show social relationship information can be exploited to improve sentiment analysis. They have shown numerically that incorporating social-network information can indeed lead to statistically significant sentiment-classification improvements over the performance of a SVM baseline model that only has access to textual features. Yang and Eisenstein(2016)[1] is a more recent version for combining social network information and sentiment analysis. They study task for classifying sentiment to be positive, neutral and negative for each tweets given text and user ID information. Their model consider the author information and sentence information separately: each node (author) in the network is assigned an embedding vector using the LINE algorithm[2], and then is (softly) assigned each cluster on the network based on the embedding. Each cluster has its own model, which is a CNN model combined with max pool layer. Detail model specs are described in section 4 as a comparison to our model.
 
-On the other hand, Yang and Chang(2016)[6] study another problems called entity linking, which is the task of identifying mentionsof entities in text, and linking them to entries in a knowledge base. They achieve the-state-of-art result with a tree-based model in Twitter data.  To further improve the performance, Yang et al.(2016)[7] propose to incorporate social network information in the same problem. Intuitively, socially linked individuals share interests, and are therefore likely to mention the same sorts of entities. They build a bilinear model based on the previous the-state-of-art tree model[6] that consider interactions of users and entities. This new model incorporating social network information has a F1 improvements of 1\%-5\% on benchmark datasets.
+On the other hand, Yang and Chang(2016)[6] study another problems called entity linking, which is the task of identifying mentions
+of entities in text, and linking them to entries in a knowledge base. They achieve the-state-of-art result with a tree-based model in Twitter data.  To further improve the performance, Yang et al.(2016)[7] propose to incorporate social network information in the same problem. Intuitively, socially linked individuals share interests, and are therefore likely to mention the same sorts of entities. They build a bilinear model based on the previous the-state-of-art tree model[6] that consider interactions of users and entities. This new model incorporating social network information has a F1 improvements of 1\%-5\% on benchmark datasets.
