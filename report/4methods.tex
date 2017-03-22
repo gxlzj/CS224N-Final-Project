@@ -4,8 +4,7 @@
 \label{Sec:methodology}
 
 %Methodology/Algorithm: What method or algorithm are you proposing? If there are existing implementations, will you use them and how? How do you plan to improve or modify such implementations?
-
-Our model will start from the state-of-the-art convolutional neural network model. Upon CNN baseline, we modify it with a author embedding activation layer. 
+Our task is given tweet content ``i told you shane would get his ...'' and user ID ``72751'', we need to classify the sentiment of this sentence to be positive, neutral or negative. Our model will start from the state-of-the-art convolutional neural network model. Upon CNN baseline, we modify it with a author embedding activation layer. 
 \subsection*{CNN Baseline}
 Sentence word embeddings are concatenated together as inputs, $(\mathbf{h_1},\mathbf{h_2},\ldots,\mathbf{h_n})$, where the maximum sentence length is usually less than $n$ words due to character constraints of tweets. If a sentence is less than $n$ words, we will use zero word vectors to fill it. Therefore, our input data are consistent length $n$. Next, a convolutional layer is performed on the sentence word embeddings with a width-two window to $d$-channel filters of size $n-1$. Then a max pooling layer pick the largest value among the $n-1$ layers to form a $d$-channel features. Finally, this length $d$ features are input into a softmax layer to classify three-class label. To express the above model structures in mathematical equation:
 \begin{enumerate}
