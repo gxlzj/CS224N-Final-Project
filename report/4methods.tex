@@ -35,7 +35,7 @@ where $\mathbf{s} \in \R^{d \times 1}$ are features learned from CNN.
 \caption{baseline CNN network strucutre}
 \end{figure}
 
-\subsection*{Node Activated CNN}
+\subsection*{Author Activated CNN}
 In our dataset, each tweet also includes a user ID. We use algorithm of LINE, DeepWalk and Node2Vec to learn a network node embedding for each user ID to form author embeddings $\mathbf{a}$ for each sentence $(\mathbf{h_1},\mathbf{h_2},\ldots,\mathbf{h_n})$. Compared to baseline CNN, we use one hidden layer to learn an activated vector $\mathbf{z}$ for each user which element-wise multiplies convolutional layer. The intuition behind this activated vector is that for each convolutional channel, different user may display different behaviors. This is in fact equivalent with bilinear form with low rank approximation. We can exploit the interaction between word embeddings and author embeddings. To express the above model structures in mathematical equation:
 \begin{enumerate}
 	\item The convolutional layer:
