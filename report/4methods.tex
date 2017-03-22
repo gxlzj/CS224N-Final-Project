@@ -1,11 +1,23 @@
 %!TEX root = report.tex
-
+\newcommand{\R}{\mathbb{R}}
 \section{Methodology}
 \label{Sec:methodology}
 
 %Methodology/Algorithm: What method or algorithm are you proposing? If there are existing implementations, will you use them and how? How do you plan to improve or modify such implementations?
 
-Our project will start from the method proposed by Yang and Eisenstein(2016)[1], which is summarized in Figure \ref{Fig:Flow} (black lines). The model consider the author information and sentence information separately: each node (author) in the network is assigned an embedding vector using the LINE algorithm[3], and then is (softly) assigned each cluster on the network based on the embedding. Each cluster has its own model, which is a CNN model combined with max pool layer. This model provides a baseline in our project.
+Our project will start from the state-of-the-art convolutional neural network model. Sentence word embeddings are concatenated together as inputs, $(h_1,h_2,\ldots,h_n)$, where the maximum sentence length are $n$ words. If a sentence is less than $n$ words, we will use zero word vectors to fill it. Therefore, our input data are consistent length $n$. Next, a convolutional layer is performed on the sentence word embeddings with a width-two window to $d$-channel filters of size $n-1$. Then a max pooling layer pick the largest value among the $n-1$ layers and form a $d$-channel features. Finally, this length $d$ features are input into a softmax layer to classify three-class label. In mathematical equation:
+\begin{equation}
+	\mathbf{c_i} = \tanh(W_L\mathbf{h_i} + W_R \mathbf{h_{i+1}} + \mathbf{b}), i=1,2,\ldots,n-1
+\end{equation}
+where $\mathbf{h_i}\in \R^{D\times1}$ are word embedding, $\mathbf{c_i} \in \R^{d\times1}$ are padding $i$ in the convolutional layer, $W_L$ and $W_R$ are convolutional layer kernel matrices, $\mathbf{b}$ is the convolutional layer bias vector.
+\begin{equation}
+	\mathbf{s} = \max_{i=1,2,\ldots,n-1}\mathbf{c_i}
+\end{equation}
+where $\mathbf{s} \in \R^{d \times 1}$ are features learned from CNN.
+\begin{equation}
+	\mathbb{P}(Y=c|s)=\frac{\exp(W_{c}\mathbf{s}+\mathbf{b_c})}{\sum_{c'}\exp(W_{c'}\mathbf{s}+\mathbf{b_c'})}
+\end{equation}
+
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
