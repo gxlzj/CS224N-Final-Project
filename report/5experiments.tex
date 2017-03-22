@@ -74,7 +74,15 @@ we still fail to retrieve their declared result in the paper. Here we put the im
 
 
 
-Table \ref{Tb:Results} summarizes the empirical result of our experiments. Both baseline CNN model and our Interaction-CNN model are tuned for all parameters The best hyper parameter sets for baseline CNN model is 100 bigram filters, 0.4 dropout rate, and 1e-2 for $L_2$ penalty coefficient. The best hyper parameter sets for Interaction-CNN model is 100 bigram filters, 100 author embedding dimension, and from RETWEET+ network. The best dropout rate and $L_2$ penalty coefficient depends on which node embedding method we use.
+Table \ref{Tb:Results} summarizes the empirical result of our experiments. Both baseline CNN model 
+and our Interaction-CNN model are tuned for all parameters The best hyper parameter sets for baseline 
+CNN model is 100 bigram filters, 0.4 dropout rate, and 1e-2 for $L_2$ penalty coefficient. The best 
+hyper parameter sets for Interaction-CNN model is 100 bigram filters, 100 author embedding dimension, 
+and from RETWEET+ network. The best dropout rate and $L_2$ penalty coefficient depends on which 
+node embedding method we use. From the table, we see that the improvement after addingthe node 
+embedding is insignificant. The author-activated CNN model sometimes do even worse in terms of test 
+sets prediction. Different node embedding scheme does not seems to have big impact on the downstream 
+prediction task.
 
 
 
