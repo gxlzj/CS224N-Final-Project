@@ -6,32 +6,31 @@ We implement our model in Section \ref{Sec:methodology} with TensorFlow,
 and apply our code on the dataset described in Section \ref{Sec:ProblemData}. 
 To be specific, we train and tune our model on the 2013 Train and Dev dataset, 
 and evaluate our model on the Test 2013--2015 dataset. The focus of this section 
-is to compare our model performance with the CNN baseline model and 
+is to compare our author activated CNN model performance with the baseline CNN model.
 
 \subsection{Experiment Setting}
-We employ the pretrained word embeddings by Austudillo et al.\ \cite{astudillo2015learning}. 
+We employ the pretrained word embeddings by Austudillo et al.\ [13]. 
 These embeddings are obtained via training on a corpus of 52 million tweets
-using the structure skip-gram model \cite{ling2015two}, and have been shown to
-perform very well on sentiment analysis tasks \cite{yang2017attention}.
+using the structure skip-gram model [14], and have been shown to
+perform very well on sentiment analysis tasks [1].
 We also use the same evaluation metric as the SemEval challenge.
 
 We pretrain the word embedding using several existing network node embedding methods 
-including DeepWalk \cite{perozzi2014deepwalk}, LINE \cite{tang2015line}, 
-and node2vec \cite{grover2016node2vec}. These methods are applied to all the FOLLOWER+,
+including DeepWalk [2], LINE [3], 
+and node2vec [4]. These methods are applied to all the FOLLOWER+,
 MENTION+, and RETWEET+ networks. In addition, to provide a baseline for different node embedding methods, 
 we use purely random node vector.
 
 
 
 Regarding baseline models, we adopt the state-of-the-art convolutional neural network model
-methodology for sentiment analysis. This model is the basis model of our Interaction Model and
+methodology for sentiment analysis. This model is the basis model of our Author Activation CNN Model and
 has been described in Section \ref{Sec:methodology}. As a second baseline model, we adopt
-the Social Attention model \cite{yang2017attention} which models the soft-assignment of
-users to communities. 
+the Social Attention model [1] which models the soft-assignment of users to communities. 
 
 
 \paragraph{Parameter tuning} 
-For both the baseline CNN model and Interaction CNN model, we tune all the hyper parameters 
+For both the baseline CNN model and author activated CNN model, we tune all the hyper parameters 
 on the SemEval 2013 Dev dataset, including
 \begin{itemize}
 \item number of bigram filters for the CNN models, from \{16, 32, 50, 100\};
@@ -44,7 +43,7 @@ MENTION+, and RETWEET+ networks with three node embedding methods. Using differe
 as well as embedding algorithms can all be considered as hyper parameters.
 We also adopted early stopping method based on Dev Performance to prevent our model from overfitting.
 
-For the Social Attention model, we use the best hyper parameter set provided by the author \cite{yang2017attention}.
+For the Social Attention model, we use the best hyper parameter set provided by the author [1].
 
 
 \subsection{Results}
@@ -69,17 +68,17 @@ Avg test sets & 68.78 &69.32& 67.92 & 68.56  & 68.10 \\
 \caption{Prediction performance on each Dev and Test Sets. }
 \label{Tb:Results}
 \end{table}%
-\footnotetext{Social Attention model \cite{Yang}. Note that even after contacting the authors and obtaining their code, 
+\footnotetext{Social Attention model [1]. Note that even after contacting the authors and obtaining their code, 
 we still fail to retrieve their declared result in the paper. Here we put the implemented result using their provided code.} 
 
 
 
 Table \ref{Tb:Results} summarizes the empirical result of our experiments. Both baseline CNN model 
-and our Interaction-CNN model are tuned for all parameters The best hyper parameter sets for baseline 
+and our author activated CNN model are tuned for all parameters The best hyper parameter sets for baseline 
 CNN model is 100 bigram filters, 0.4 dropout rate, and 1e-2 for $L_2$ penalty coefficient. The best 
-hyper parameter sets for Interaction-CNN model is 100 bigram filters, 100 author embedding dimension, 
+hyper parameter sets for the author activated CNN model is 100 bigram filters, 100 author embedding dimension, 
 and from RETWEET+ network. The best dropout rate and $L_2$ penalty coefficient depends on which 
-node embedding method we use. From the table, we see that the improvement after addingthe node 
+node embedding method we use. From the table, we see that the improvement after adding the node 
 embedding is insignificant. The author-activated CNN model sometimes do even worse in terms of test 
 sets prediction. Different node embedding scheme does not seems to have big impact on the downstream 
 prediction task.

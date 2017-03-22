@@ -1,9 +1,20 @@
 %!TEX root = report.tex
 
-\section{Discussion}
+\section{Discussion and Conclusion}
+Our experiment results are not cheerful, and we believe it is due to the following two reasons.
+First, our sample size is too small, which makes the training suffer from overfitting. 
+Even if we have employed different overfitting prevention techniques including $L_2$ 
+penalty on weights, dropout, and early stop, considering that we only have 8,000 training tweet samples
+it is not likely to build insightful models. We believe a larger training set would help solving this 
+issue of overfitting.
 
-\begin{itemize}
-	\item sample size too small. everything is random effect.
-	\item Yang and Esteintin(2016)[1] result is not persuasive either. We believe their model improvement is due to ensemble effect. In fact, in our running of their code, their baseline models outperform their social attention model.
-	\item even if we get a frustrating result, a larger dataset might still make it work.
-\end{itemize}
+Second, the experiment results show that the twitter networks are not informative in terms of language
+variation. One follow another person does not mean that these two people are friends and should
+have similar language usage preference. We believe a better network would be Facebook friendship network.
+
+The experiment by Yang and Esteintin(2016)[1] is not persuasive either. We believe their model improvement is due to ensemble effect. In fact, in our running of their code, their baseline models outperform their social attention model.
+
+Despite the unsatisfying result, we still believe social network information may help solving the issue of 
+language variation and thus improve the general performance of sentiment analysis and other natural language tasks. 
+Even though this user-activation method does not help the CNN baseline model, other ways of introduction may help, 
+and may also help the prediction of other NLP models such as RNN and LSTM.
