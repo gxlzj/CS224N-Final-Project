@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.14)  21 MAR 2017 16:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.14)  21 MAR 2017 17:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -433,9 +433,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
  (./1introduction.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-) (./2related.tex) (./3problem.tex
+) (./2related.tex [1
 
-LaTeX Warning: Citation `yang2017attention' on page 1 undefined on input line 4.
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./3problem.tex
+
+LaTeX Warning: Citation `yang2017attention' on page 2 undefined on input line 4.
 
 
 Overfull \hbox (94.51501pt too wide) in paragraph at lines 8--8
@@ -448,42 +450,48 @@ Overfull \hbox (118.51501pt too wide) in paragraph at lines 8--8
  []
 
 
-LaTeX Warning: Citation `yang2017attention' on page 1 undefined on input line 10.
+LaTeX Warning: Citation `yang2017attention' on page 2 undefined on input line 10.
 
 ) (./4methods.tex
 
-LaTeX Warning: Citation `yang2017attention' on page 1 undefined on input line 7.
+LaTeX Warning: Citation `yang2017attention' on page 2 undefined on input line 7.
 
 
-LaTeX Warning: Citation `tang2015line' on page 1 undefined on input line 7.
+LaTeX Warning: Citation `tang2015line' on page 2 undefined on input line 7.
 
-<flow.jpg, id=29, 1170.3725pt x 675.52374pt>
+<flow.jpg, id=40, 1170.3725pt x 675.52374pt>
 File: flow.jpg Graphic file (type jpg)
  <use flow.jpg>
 Package pdftex.def Info: flow.jpg used on input line 11.
 (pdftex.def)             Requested size: 375.80377pt x 216.90385pt.
 
 
-LaTeX Warning: Citation `perozzi2014deepwalk' on page 1 undefined on input line 21.
+LaTeX Warning: Citation `perozzi2014deepwalk' on page 2 undefined on input line 21.
 
 
-LaTeX Warning: Citation `grover2016node2vec' on page 1 undefined on input line 21.
+LaTeX Warning: Citation `grover2016node2vec' on page 2 undefined on input line 21.
 
-[1
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./5experiments.tex) (./6discussion.tex) (./7reference.tex [2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+[2]) (./5experiments.tex) (./6discussion.tex) (./7reference.tex [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.14 [
-      5] Tan, Chenhao, et al. "User-level sentiment analysis incorporating s...pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+l.16 [
+      6] Yang, Yi, and Ming-Wei Chang. "S-mart: Novel tree-based structured ...pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.14 [
-      5] Tan, Chenhao, et al. "User-level sentiment analysis incorporating s... <./flow.jpg>])
+l.16 [
+      6] Yang, Yi, and Ming-Wei Chang. "S-mart: Novel tree-based structured ... <./flow.jpg>]
+Missing character: There is no Â in font ptmr7t!
+Missing character: There is no ® in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ­ in font ptmr7t!
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 239.
- [3]
+ [4]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
  (/Users/pfgao/Documents/Stanford/2017Winter/CS224nProj_src/report/.texpadtmp/report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
@@ -497,18 +505,18 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 239.
  ) 
 Here is how much of TeX's memory you used:
- 8824 strings out of 493014
- 125518 string characters out of 6133350
+ 8828 strings out of 493014
+ 125571 string characters out of 6133350
  216797 words of memory out of 5000000
- 12171 multiletter control sequences out of 15000+600000
+ 12174 multiletter control sequences out of 15000+600000
  23723 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,10n,39p,591b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,10n,39p,991b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/pfgao/Documents/Stanford/2017Winter/CS224nProj_src/report/.texpadtmp/report.pdf (3 pages, 288819 bytes).
+Output written on /Users/pfgao/Documents/Stanford/2017Winter/CS224nProj_src/report/.texpadtmp/report.pdf (4 pages, 293711 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 16 named destinations out of 1000 (max. 500000)
  54 words of extra memory for PDF output out of 10000 (max. 10000000)
 
